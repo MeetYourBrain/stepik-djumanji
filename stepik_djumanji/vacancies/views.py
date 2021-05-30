@@ -11,7 +11,7 @@ def main_view(request):
 
     return render(request, 'index.html', context={
         'specialties': specialties,
-        'companies': companies
+        'companies': companies,
         })
 
 
@@ -20,7 +20,7 @@ def vacancies_view(request):
 
     return render(request, 'vacancies.html', context={
         'vacancies': Vacancy.objects.all(),
-        'title': title
+        'title': title,
     })
 
 
@@ -33,7 +33,7 @@ def specialisation_view(request, vacancy_code):
 
     return render(request, 'vacancies.html', context={
         'vacancies': vacancies,
-        'vacancies_title': vacancies_title
+        'vacancies_title': vacancies_title,
     })
 
 
@@ -48,7 +48,7 @@ def company_view(request, pk):
 
     return render(request, 'company.html', context={
         'companies': companies,
-        'vacancies': vacancies_in_company
+        'vacancies': vacancies_in_company,
     })
 
 
@@ -59,5 +59,5 @@ def vacancy_view(request, pk):
         raise Http404()
 
     return render(request, 'vacancy.html', context={
-        'vacancy': vacancy
+        'vacancy': vacancy,
     })

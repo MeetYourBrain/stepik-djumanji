@@ -8,11 +8,17 @@ class Company(models.Model):
     description = models.TextField()
     employee_count = models.IntegerField()
 
+    def __str__(self):
+        return f'Company with pk={self.pk}'
+
 
 class Specialty(models.Model):
     code = models.CharField(max_length=64)
     title = models.CharField(max_length=64)
     picture = models.URLField(default='https://place-hold.it/100x60')
+
+    def __str__(self):
+        return f'Specialty with pk={self.pk}'
 
 
 class Vacancy(models.Model):
@@ -24,3 +30,6 @@ class Vacancy(models.Model):
     salary_min = models.IntegerField()
     salary_max = models.IntegerField()
     published_at = models.DateField()
+
+    def __str__(self):
+        return f'Vacancy with pk={self.pk}'

@@ -15,13 +15,13 @@ if __name__ == '__main__':
             location=company['location'],
             logo=company['logo'],
             description=company['description'],
-            employee_count=company['employee_count']
+            employee_count=company['employee_count'],
         )
 
     for spec in data.specialties:
         speciality = Specialty.objects.create(
             code=spec['code'],
-            title=spec['title']
+            title=spec['title'],
         )
     for job in data.jobs:
         vacancy = Vacancy.objects.create(
@@ -32,5 +32,5 @@ if __name__ == '__main__':
             description=job['description'],
             salary_min=job['salary_from'],
             salary_max=job['salary_to'],
-            published_at=job['posted']
+            published_at=job['posted'],
         )
