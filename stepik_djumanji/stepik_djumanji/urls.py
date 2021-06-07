@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from vacancies.views import main_view, vacancies_view, specialisation_view, company_view, vacancy_view
 
@@ -26,4 +28,4 @@ urlpatterns = [
     path('vacancies/cat/<str:vacancy_code>', specialisation_view, name='specialisation'),
     path('companies/<int:pk>', company_view, name='company'),
     path('vacancies/<int:pk>', vacancy_view, name='vacancy'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
