@@ -1,1 +1,1 @@
-web: gunicorn stepik_djumanji.wsgi
+web: gunicorn stepik-djumanji.wsgi
