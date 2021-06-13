@@ -3,6 +3,7 @@ astpretty==2.1.0
 attrs==21.2.0
 cognitive-complexity==1.2.0
 Django==3.2.3
+django-crispy-forms==1.11.2
 eradicate==2.0.0
 flake8==3.9.2
 flake8-blind-except==0.2.0
@@ -19,6 +20,7 @@ flake8-print==4.0.0
 flake8-variables-names==0.0.4
 mccabe==0.6.1
 pep8-naming==0.11.1
+Pillow==8.2.0
 pycodestyle==2.7.0
 pyflakes==2.3.1
 pytz==2021.1

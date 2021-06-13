@@ -18,14 +18,33 @@
       <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
         <ul class="navbar-nav col-10">
           <li class="nav-item">
-            <a class="nav-link" href="/vacancies/">Вакансии</a>
+            <a class="nav-link" href="{% url 'vacancies' %}">Вакансии</a>
           </li>
 
         </ul>
         <ul class="navbar-nav col-2 justify-content-end">
+          {% if request.user.is_authenticated %}
           <li class="nav-item active">
-            <a href="#" class="nav-link font-weight-bold">Вход</a>
+            <div class="btn-group">
+              <button type="button" class="btn dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ user.username }}
+              </button>
+              <div class="dropdown-menu dropdown-menu-right mt-3">
+                {% if request.user.is_superuser %}
+                <a href="admin/" class="dropdown-item py-2">Админ-панель</a>
+                {% endif %}
+                <a href="#" class="dropdown-item py-2">Профиль</a>
+                <a href="#" class="dropdown-item py-2">Резюме</a>
+                <a href="{% url 'my_company' %}" class="dropdown-item py-2">Компания</a>
+                <a href="{% url 'logout' %}" class="dropdown-item py-2">Выйти</a>
+              </div>
+            </div>
           </li>
+          {% else %}
+          <li class="nav-item active">
+            <a href="{% url 'login' %}" class="nav-link font-weight-bold">Вход</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
