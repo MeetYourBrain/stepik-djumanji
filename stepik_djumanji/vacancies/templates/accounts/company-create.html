@@ -1,0 +1,39 @@
+{% extends 'accounts/base_profile.html' %}
+{% block container %}
+  <main class="container mt-3 pb-5">
+    <div class="row mt-5">
+      <div class="col-12 col-lg-4">
+        <aside class="pt-3 pb-4 px-4 mb-5 card">
+          <h1 class="h4 pt-2 pb-2">Моя компания</h1>
+          <div class="nav flex-column nav-pills">
+            <a class="nav-link active" href="{% url 'my_company' %}">1. Информация о&nbsp;компании</a>
+            <a class="nav-link" href="{% url 'my_vacancies' %}">2. Вакансии</a>
+          </div>
+        </aside>
+      </div>
+      <div class="col-12 col-lg-8">
+        <div class="card">
+          <div class="card-body px-4 pb-4">
+            <section class="tab-pane fade show active">
+              <h2 class="h4 pt-2 pb-3">Информация о&nbsp;компании</h2>
+              {% if messages %}
+              {% for message in messages %}
+                {% if message.tags == error %}
+                  <p class="alert alert-danger" role="alert">{{ message }}</p>
+                {% else %}
+                  <p class="alert alert-{{ message.tags }}" role="alert">{{ message }}</p>
+                {% endif %}
+
+              {% endfor %}
+              {% endif %}
+              <form enctype="multipart/form-data" method="post">
+              {% load crispy_forms_tags %}
+              {% crispy form %}
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
