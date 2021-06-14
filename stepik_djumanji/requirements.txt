@@ -2,8 +2,10 @@ asgiref==3.3.4
 astpretty==2.1.0
 attrs==21.2.0
 cognitive-complexity==1.2.0
+dj-database-url==0.5.0
 Django==3.2.3
 django-crispy-forms==1.11.2
+django-heroku==0.3.1
 eradicate==2.0.0
 flake8==3.9.2
 flake8-blind-except==0.2.0
@@ -22,8 +24,10 @@ gunicorn==20.1.0
 mccabe==0.6.1
 pep8-naming==0.11.1
 Pillow==8.2.0
+psycopg2==2.8.6
 pycodestyle==2.7.0
 pyflakes==2.3.1
 pytz==2021.1
 six==1.16.0
 sqlparse==0.4.1
+whitenoise==5.2.0
